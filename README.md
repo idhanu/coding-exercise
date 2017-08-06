@@ -23,4 +23,4 @@ Game Rules
 Our Aim
 -------
 
-Fork this project to your private repo, create an implementation in either NodeJS, Golang or PHP. The only requirement is that it needs to have tests!
+Fork this project to your private repo, create an implementation in either NodeJS, Golang or PHP. The time-limit is 1.5 hours, and it's a complicated task. Keep that in mind with your approach!
