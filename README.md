@@ -23,4 +23,4 @@ Game Rules
 Our Aim
 -------
 
-Fork this project to your private repo, create an implementation in PHP, along with tests, and submit it as a PR.
+Fork this project to your private repo, create an implementation in either NodeJS, Golang or PHP. The only requirement is that it needs to have tests!
