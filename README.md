@@ -29,4 +29,4 @@ http://en.wikipedia.org/wiki/Conway%27s_Game_of_Life
 
 ### Implementation
 
-It's up to you how you implement this, especially how you render the visual representation of the game. If you are short for time, it's ok to not do any visual rendering at all, but it should be clear how that would be implemented in future. 
+It's up to you how you implement this, especially how you render the visual representation of the game. If you are short for time, it's ok to not do any visual rendering at all, but it should be clear how that would be implemented in future. Tests are also optional, but looked upon very favourably if included. 
