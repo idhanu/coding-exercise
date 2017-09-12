@@ -1,3 +1,36 @@
+How to run
+==========
+The application is designed to run as a command line program. The command,
+```
+php cli.php input_test.txt 
+```
+will start a sequence and will display each step as a text representation. 
+
+Since player needs to enter the initial step (grid of cells), this application uses a text file. The input
+file contains the initial input in the form of a grid of spaces and zeros (ex. input_test.txt). 
+
+Running tests
+=============
+There are two unit test files included. Assuming phpunit is setup to run as command,
+following commands will run the tests.
+```
+phpunit GridTest.php
+phpunit GameTest.php
+```
+
+Running this in a server in the future
+=======================================
+This implementation only targets to run the application as a command line tool. However, classes
+are reusable if someone would like to use this on a PHP web server. The Grid.php class, can take
+an array formed grid input and generate the next step. An API can use it to generate the next step. API
+can accept a grid representation of the current step and return the next step. The frontend web client
+can then render each step based on the output. Server may use something like PHP_SESSION to persist the 
+last step to reduce bandwidth.
+
+PHP Version
+===========
+I used PHP 5, syntax, not the PHP7 with the strict mode. No auto-loading method is used.
+
 Coding Exercise
 ===============
 
