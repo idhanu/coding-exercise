@@ -1,0 +1,72 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+    <title>Game of Life</title>
+    <style type="text/css">
+        table {
+            border: 1px solid black;
+            border-spacing:0;
+            border-collapse: collapse;
+        }
+
+        table td {
+            border: 1px solid #ccc;
+            height: 5px;
+            width: 5px;
+        }
+
+        table td.fill {
+            background: #000;
+        }
+    </style>
+</head>
+
+<body>
+<div id="grid"></div>
+
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"
+        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous"></script>
+<script type="text/javascript">
+    function init() {
+        var grid = [];
+        var width = 30;
+        var height = 20;
+        for(var i = 0; i < height; i++) {
+            grid[i] = [];
+            for (var j=0; j < width; j++) {
+                grid[i][j] = Math.random() <= 0.4;
+            }
+        }
+
+        function nextTick() {
+            var data = {};
+            data.grid = JSON.stringify(grid);
+            $.post( "api.php", data, function( data ) {
+                grid = data;
+                renderGrid();
+            }, "json");
+        }
+
+        function renderGrid() {
+            var html = '<table>';
+            for(var i = 0; i < height; i++) {
+                html += '<tr>';
+                for (var j=0; j < width; j++) {
+                    html += '<td ' + (grid[i][j] ? 'class="fill"' : '') + '></td>';
+                }
+                html += '</tr>';
+            }
+            html += '</table>';
+            $('#grid').html(html);
+        }
+
+        renderGrid(grid);
+        setInterval(nextTick, 300);
+    }
+
+    init();
+</script>
+</body>
+</html>
